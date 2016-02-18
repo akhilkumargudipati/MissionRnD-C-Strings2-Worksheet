@@ -16,14 +16,14 @@ int count_word_in_str_way_1(char *str, char *word)
 {
 	if (str == NULL || word == NULL)
 		return 0;
-	int count = 0,temp1;
+	int count = 0;
 
-	for ( temp1 = 0; str[temp1]!= '\0'; temp1++){
-		int temp2;
-		for (temp2 = 0; word[temp2] != '\0'; temp2++)
-			if (str[temp1 + temp2] != word[temp2])
+	for (int i = 0; str[i] != '\0'; i++){
+		int j;
+		for (j = 0; word[j] != '\0'; j++)
+			if (str[i + j] != word[j])
 				break;
-		if (word[temp1] == '\0')
+		if (word[j] == '\0')
 			count++;
 	}
 	return count;
